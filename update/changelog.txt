@@ -1,0 +1,4 @@
+[08/11/2025] Version 1.0 - Première version publique
+- Ajout du mode clair/sombre
+- Système de vote local (localStorage)
+- Lecture des lois depuis data/lois.json
