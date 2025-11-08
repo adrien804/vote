@@ -1,1 +1,9 @@
+{
+  "nomProjet": "Vote Citoyen",
+  "version": "1.0",
+  "createur": "Adrien Couderc Peyré",
+  "dateCreation": "2025-11-08",
+  "theme": "clair",
+  "description": "Application citoyenne pour voter sur des lois et suivre l'avis du public."
+}
 
