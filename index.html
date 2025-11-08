@@ -3,33 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoteLoi - Plateforme citoyenne</title>
+  <meta name="description" content="Vote Citoyen - Plateforme simple pour lire et voter sur les lois proposées.">
+  <title>Vote Citoyen</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- 🧭 En-tête -->
   <header>
-    <h1>VoteLoi 🗳️</h1>
-    <button id="themeToggle">🌙</button>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo" onerror="this.style.display='none'">
+      <h1>Vote Citoyen</h1>
+    </div>
+    <button id="theme-toggle">🌞 / 🌙</button>
   </header>
 
+  <!-- 🧱 Contenu principal -->
   <main>
     <section id="intro">
-      <h2>Bienvenue sur VoteLoi</h2>
-      <p>Découvrez les lois, votez et exprimez votre opinion. Les résultats sont visibles en temps réel.</p>
+      <h2>Bienvenue sur Vote Citoyen</h2>
+      <p>
+        Découvrez les lois en cours de discussion et exprimez votre avis de manière simple et anonyme.
+        Les votes sont enregistrés localement sur votre appareil.
+      </p>
     </section>
 
-    <section id="laws">
+    <section id="lois-section">
       <h2>Liste des lois</h2>
-      <div id="lawList" class="law-container">
-        <!-- Les lois seront chargées ici -->
+      <div id="lois-container">
+        <p>Chargement des lois...</p>
       </div>
     </section>
   </main>
 
+  <!-- 🧾 Pied de page -->
   <footer>
-    <p>© 2025 VoteLoi - Projet citoyen</p>
+    <p>© 2025 Vote Citoyen – Version 1.0</p>
+    <a href="update/changelog.txt" target="_blank">Historique des mises à jour</a>
   </footer>
 
+  <!-- ⚙️ Script principal -->
   <script src="script.js"></script>
+
 </body>
 </html>
