@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Interdiction des sacs plastiques à usage unique",
+    "description": "Cette loi propose de renforcer l'interdiction des sacs plastiques dans tous les commerces dès 2026."
+  },
+  {
+    "id": 2,
+    "title": "Semaine de travail de 4 jours",
+    "description": "Expérimentation nationale pour réduire le temps de travail à 32 heures sans baisse de salaire."
+  },
+  {
+    "id": 3,
+    "title": "Augmentation du budget de la santé",
+    "description": "Proposition d’augmenter de 10% les dépenses publiques dans les hôpitaux d’ici 2027."
+  }
+]
