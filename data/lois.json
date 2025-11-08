@@ -1,1 +1,18 @@
+[
+  {
+    "id": 1,
+    "titre": "Réduction des déchets plastiques",
+    "description": "Interdiction des plastiques à usage unique dès 2026."
+  },
+  {
+    "id": 2,
+    "titre": "Allongement du congé parental",
+    "description": "Passage du congé parental de 3 à 6 mois pour tous les parents."
+  },
+  {
+    "id": 3,
+    "titre": "Taxe carbone européenne",
+    "description": "Hausse de la taxe carbone sur les grandes entreprises polluantes."
+  }
+]
 
