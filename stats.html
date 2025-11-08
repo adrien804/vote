@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Statistiques des votes - Vote Citoyen">
+  <title>Statistiques - Vote Citoyen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🧭 En-tête -->
+  <header>
+    <div class="logo">
+      <h1>📊 Statistiques des Votes</h1>
+    </div>
+    <a href="index.html" class="retour">⬅ Retour</a>
+  </header>
+
+  <!-- 🧱 Contenu principal -->
+  <main>
+    <section id="stats-container">
+      <p>Chargement des statistiques...</p>
+    </section>
+  </main>
+
+  <!-- 🧾 Pied de page -->
+  <footer>
+    <p>© 2025 Vote Citoyen – Statistiques locales</p>
+  </footer>
+
+  <script>
+    // Charger les lois depuis le JSON
+    async function chargerLois() {
+      const reponse = await fetch('data/lois.json');
+      const lois = await reponse.json();
+      afficherStats(lois);
+    }
+
+    // Afficher les statistiques
+    function afficherStats(lois) {
+      const container = document.getElementById("stats-container");
+      container.innerHTML = "";
+
+      lois.forEach(loi => {
+        const vote = localStorage.getItem(`vote_${loi.id}`) || "Aucun";
+
+        // Créer la carte de la loi
+        const loiDiv = document.createElement("div");
+        loiDiv.classList.add("loi");
+
+        loiDiv.innerHTML = `
+          <h2>${loi.titre}</h2>
+          <p>${loi.description}</p>
+          <p><strong>Votre vote :</strong> ${vote}</p>
+          <div class="progress-container">
+            <div class="progress pour" id="pour-${loi.id}" style="width: 0%">Pour</div>
+            <div class="progress contre" id="contre-${loi.id}" style="width: 0%">Contre</div>
+            <div class="progress neutre" id="neutre-${loi.id}" style="width: 0%">Neutre</div>
+          </div>
+        `;
+
+        container.appendChild(loiDiv);
+
+        // Calcul fictif des statistiques locales (plus tard, ce sera partagé via N8N)
+        mettreAJourProgress(loi.id, vote);
+      });
+    }
+
+    // Simule une barre de progression pour le vote actuel
+    function mettreAJourProgress(id, vote) {
+      const total = 100;
+      let pour = 0, contre = 0, neutre = 0;
+
+      // Pondération de test (à remplacer plus tard par les vraies données globales)
+      if (vote === "Pour") pour = 100;
+      if (vote === "Contre") contre = 100;
+      if (vote === "Neutre") neutre = 100;
+
+      document.getElementById(`pour-${id}`).style.width = pour + "%";
+      document.getElementById(`contre-${id}`).style.width = contre + "%";
+      document.getElementById(`neutre-${id}`).style.width = neutre + "%";
+    }
+
+    chargerLois();
+  </script>
+
+</body>
+</html>
